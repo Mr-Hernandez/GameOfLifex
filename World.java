@@ -51,5 +51,15 @@ class World {
 	void setWorld(char[][] newGen) {
 		world = newGen;
 	}
+	
+	int getLiving() {
+		int alive = 0;
+		for (int i = 0; i < world.length; i++) {
+			for (int j = 0; j < world[i].length; j++) {
+				if (world[i][j] == 'O') {alive++;}
+			}
+		}
+		return alive;
+	}
 }
 

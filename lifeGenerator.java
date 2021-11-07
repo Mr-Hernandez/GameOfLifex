@@ -8,12 +8,18 @@ class lifeGenerator {
 	Random random;
 	char[][] newGen;
 	
+	public lifeGenerator(int worldSize) {
+		this.worldSize = worldSize;
+		random = new Random();
+		this.seed = 0;
+	}
+	
 	public lifeGenerator(int worldSize, long seed) {
 		this.seed = seed;
 		this.worldSize = worldSize;
 		random = new Random(this.seed);
 	}
-	
+		
 	public boolean getRand() {
 		return random.nextBoolean();
 	}
