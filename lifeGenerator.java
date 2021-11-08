@@ -3,7 +3,7 @@ package org.raf.life;
 import java.util.Random;
 
 class lifeGenerator {
-	final private long seed;
+	private long seed;
 	final private int worldSize;
 	Random random;
 	char[][] newGen;
@@ -216,6 +216,10 @@ class lifeGenerator {
 			for (int j = 0; j < newGen[i].length; j++)
 				newGen[i][j] = ' ';
 		}	
+	}
+	
+	public void resetSeed() {
+		random = new Random();
 	}
 	
 	

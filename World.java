@@ -15,6 +15,15 @@ class World {
 		
 	}
 	
+	public World(lifeGenerator life) {
+		//this.worldSize = worldSize;
+		createWorld(this.worldSize);
+		populateWorld(life);
+//		System.out.println("\n1");
+//		printWorld();
+		
+	}
+	
 	private void createWorld(int N) {
 		world = new char[N][N];
 		for (int i = 0; i < N; i++) {
@@ -23,11 +32,13 @@ class World {
 		}	
 	}
 	
-	void populateWorld(lifeGenerator life) {
+	public void populateWorld(lifeGenerator life) {
 		for (int i = 0; i < worldSize; i++) {
 			for (int j = 0; j < worldSize; j++) {
 				if(life.getRand()) {
 					world[i][j] = 'O';
+				} else {
+					world[i][j] = ' ';
 				}
 			}
 		}
@@ -60,6 +71,10 @@ class World {
 			}
 		}
 		return alive;
+	}
+	
+	public char[][] getWorldArr() {
+		return world;
 	}
 }
 
