@@ -115,6 +115,10 @@ public class GameOfLife extends JFrame {
     	restart[0] = false;
     	return restarter;
     }
+    
+    public static void main(String[] args) {
+    	Main.theRealMain();
+    }
 
 
 }

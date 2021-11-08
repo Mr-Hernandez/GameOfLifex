@@ -9,7 +9,7 @@ class Main {
 	static World world;
 	static lifeGenerator life;
 	
-	public static void main(String[] args) {
+	public static void theRealMain() {
 		
 		System.out.println("Enter size of universe");
 		Scanner scnObj = new Scanner(System.in);
@@ -30,7 +30,7 @@ class Main {
 		while(true) {
 			if (gof.isRunning()) {
 	//			System.out.println(M-1 + "-------------------");
-				System.out.println("Generation #" + gen + "\nAlive: " + world.getLiving() + "\n");
+//				System.out.println("Generation #" + gen + "\nAlive: " + world.getLiving() + "\n");
 				world.setWorld(life.findNewGen(world));
 				//world.printWorld();
 				gof.updateCells(world.getWorldArr(), gen, world.getLiving());
